@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Entrepedia Replica</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- RED TOP BAR (single red line like original) -->
+  <div class="top-bar" aria-hidden="true"></div>
+
+  <!-- HEADER / NAV -->
+  <header class="site-header">
+    <div class="wrapper header-inner">
+-    <a class="brand" href="/">Entrepedia Replica</a>
++    <a class="brand" href="/"><img src="images/logo.svg" alt="Entrepedia logo"></a>
+     <button id="menuBtn" class="menu-btn" aria-expanded="false" aria-controls="menu">☰</button>
+     <nav id="menu" class="menu" role="navigation" aria-hidden="true">
+       <a href="#library">Library</a>
+       <a href="#freedom">Freedom</a>
+       <a href="#reviews">Reviews</a>
+       <a href="#custom">Custom</a>
+     </nav>
+    </div>
+  </header>
+
+<!-- HERO -->
+<section class="hero fade-in">
+  <div class="wrapper">
+    <h1>Done-for-You Infoproducts<br><span>to Grow Your Business</span></h1>
+    <p>
+      You can instantly have your own ebooks, courses, and more to sell or plug
+      into your offers. Without high investments or months of creation.
+    </p>
+
+    <div class="hero-actions">
+      <button class="primary">Pre-Made Products</button>
+      <button class="secondary">Fully Custom Creation</button>
+    </div>
+  </div>
+</section>
+
+<!-- TRUSTED -->
+<section class="trusted fade-in section-white">
+   <div class="wrapper">
+     <h2>Trusted by top brands and individuals worldwide</h2>
+
+     <div class="brands-grid">
+-      <img src="https://framerusercontent.com/images/Fx20IPHRUB04aBQIkkN8fq6h0Oc.jpeg?width=612&height=877" alt="Brand 1">
+-      <img src="https://framerusercontent.com/images/ikk7TJCpTFY4OMr43oTQtFKxfkU.jpeg?width=600&height=877" alt="Brand 2">
+-      <img src="https://framerusercontent.com/images/SOfvcAOlzgfeTZml7rwTp84O9E.jpeg?width=600&height=877" alt="Brand 3">
+-      <img src="https://framerusercontent.com/images/547Vblcrhjnad86yKZsIU8TkTs.jpeg?width=600&height=877" alt="Brand 4">
++      <img src="https://framerusercontent.com/images/SgZEAshIR8SgiX2sCNjtXkgNNNA.jpeg?width=600&height=877" alt="Brand 1">
++      <img src="https://framerusercontent.com/images/NeUwISmjPW4tIdBonFY3ltlgdM.jpeg?width=600&height=877" alt="Brand 2">
++      <img src="https://framerusercontent.com/images/ZOYr2xJx3EqJfT9HdpPoW2DDTA.jpeg?width=600&height=877" alt="Brand 3">
++      <img src="https://framerusercontent.com/images/hF12zY12PMtZD11xgvMh8ez3I4.jpeg?width=612&height=867" alt="Brand 4">
+     </div>
+   </div>
+ </section>
+
+<!-- MASTER LIBRARY -->
+<section id="library" class="library fade-in section-white">
+   <div class="wrapper">
+     <h2>Discover Master Library</h2>
+     <p>Sell or use market-ready products under your name.</p>
+
+     <div class="grid-3">
+-      <div class="card">1000+ Digital Products</div>
+-      <div class="card">15 Media Formats</div>
+-      <div class="card">Created by Experts</div>
++      <div class="card"><img src="https://framerusercontent.com/images/5w0nynRBeqfiTZyL2l0uNcLs.png?scale-down-to=512&width=563&height=563" alt="Product 1"></div>
++      <div class="card"><img src="https://framerusercontent.com/images/5w0nynRBeqfiTZyL2l0uNcLs.png?scale-down-to=512&width=563&height=563" alt="Product 2"></div>
++      <div class="card"><img src="https://framerusercontent.com/images/Nxl4C9zfpnnKFMy9f4p1cRbpeY.png?scale-down-to=512&width=585&height=426" alt="Product 3"></div>
+     </div>
+   </div>
+ </section>
+
+<!-- FREEDOM -->
+<section id="freedom" class="freedom fade-in section-white">
+   <div class="wrapper">
+     <h2>You have complete freedom</h2>
+
+    <div class="grid-4">
+      <div class="card">Sell as your own product</div>
+      <div class="card">Use as lead magnet</div>
+      <div class="card">Sell on Amazon</div>
+      <div class="card">Add to coaching</div>
+    </div>
+   </div>
+ </section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="reviews fade-in section-white">
+   <div class="wrapper">
+     <h2>Rated 4.8/5 overall by our users</h2>
+
+     <div class="review">
+-      <p>“Must have content”</p>
+-      <span>Jacob L. — United States</span>
++      <p>“Must have content”</p>
++      <div class="review-meta">
++        <img src="https://framerusercontent.com/images/h6lRYa4Au4bhHo74dLrOKVmEXM.jpg?width=80&height=80" alt="Jacob L" class="avatar">
++        <span>Jacob L. — United States</span>
++      </div>
+     </div>
+   </div>
+ </section>
+
+<!-- CUSTOM -->
+<section id="custom" class="custom fade-in section-white">
+   <div class="wrapper">
+     <h2>Custom product tailored to your brand in 7 days</h2>
+
+     <div class="grid-3">
+      <div class="card">Research & Strategy</div>
+      <div class="card">Writing & Editing</div>
+      <div class="card">Design & Delivery</div>
+     </div>
+   </div>
+ </section>
+
+<!-- FOOTER -->
+<footer class="footer fade-in section-white">
+   © 2025 Entrepedia Replica — Hackathon Project
+ </footer>
+
+<!-- include page script -->
+<script src="script.js"></script>
+
+</body>
+</html>

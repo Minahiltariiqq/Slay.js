@@ -1,0 +1,433 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg,#060606 0%, #0b0b0b 60%);
+  color: #fff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* GLOBAL WIDTH SYSTEM */
+.wrapper {
+  max-width: 1150px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* SECTIONS */
+section {
+  padding: 88px 0;
+}
+
+/* HERO */
+.hero {
+  min-height: calc(100vh - 88px);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  background-image: radial-gradient(800px 300px at 10% 10%, rgba(217,43,43,0.06), transparent 10%),
+                    radial-gradient(600px 200px at 90% 80%, rgba(13,76,255,0.04), transparent 10%);
+}
+
+.hero .wrapper {
+  width: 100%;
+}
+
+.hero .hero-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding-top: 60px;
+}
+
+.hero h1 {
+  font-size: 52px;
+  line-height: 1.02;
+  margin-bottom: 16px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 900px) {
+  .hero {
+    text-align: left;
+    padding-left: 40px;
+  }
+  .hero .hero-inner {
+    margin: 0;
+    padding-left: 20px;
+  }
+  .hero h1 { font-size: 64px; }
+}
+
+.hero h1 span {
+  color: #ff3b3b;
+  display: inline-block;
+}
+
+.hero p {
+  max-width: 680px;
+  margin: 16px 0 28px;
+  opacity: 0.86;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* BUTTONS */
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 900px) {
+  .hero-actions { justify-content: flex-start; }
+}
+
+.hero-actions button {
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.45);
+}
+
+.hero-actions button:active { transform: translateY(1px); }
+
+.primary {
+  background: linear-gradient(180deg,#ff3b3b,#d92b2b);
+  color: white;
+  box-shadow: 0 8px 28px rgba(217,43,43,0.18);
+}
+
+.primary:hover { transform: translateY(-3px); }
+
+.secondary {
+  background: rgba(255,255,255,0.03);
+  color: #fff;
+  margin-left: 0;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* HEADINGS */
+h2 {
+  font-size: 32px;
+  margin-bottom: 18px;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* TRUSTED / BRANDS */
+.trusted {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.trusted p { text-align:center; opacity:0.8; margin-bottom:18px; }
+
+/* TRUSTED / BRANDS — exact sizing + grayscale -> color reveal with stagger */
+.brands-grid {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+/* -- CHANGED: logos smaller, stronger grayscale -> color reveal, preserved stagger -- */
+.brands-grid img {
+  height: 64px;                /* reduced from 92px */
+  max-width: 200px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0;
+  transform: translateY(10px) scale(.99);
+  filter: grayscale(100%) contrast(.95) brightness(.98) saturate(.7);
+  transition:
+    opacity 520ms cubic-bezier(.2,.9,.2,1),
+    transform 520ms cubic-bezier(.2,.9,.2,1),
+    filter 420ms ease;
+  will-change: opacity, transform, filter;
+}
+
+/* hover micro-interaction */
+.brands-grid img:hover {
+  transform: translateY(-4px) scale(1.02);
+  filter: grayscale(0%) contrast(1.02) brightness(1.03) saturate(1.05);
+  opacity: 1;
+}
+
+/* reveal when trusted section shows: remove grayscale here to get color */
+.trusted.fade-in.show .brands-grid img {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+/* staggered delays for your 4 images */
+.brands-grid img:nth-child(1) { transition-delay: 80ms; }
+.brands-grid img:nth-child(2) { transition-delay: 160ms; }
+.brands-grid img:nth-child(3) { transition-delay: 260ms; }
+.brands-grid img:nth-child(4) { transition-delay: 340ms; }
+
+/* responsive */
+@media (max-width: 900px) {
+  .brands-grid img { height: 54px; max-width: 170px; }
+}
+@media (max-width: 480px) {
+  .brands-grid img { height: 40px; max-width: 120px; }
+}
+
+/* GRIDS */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+/* CARDS */
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding: 26px;
+  border-radius: 14px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 6px 20px rgba(2,6,23,0.45);
+}
+
+/* Card product images sizing (keeps consistent look) */
+.card img {
+  width: 100%;
+  height: 160px; /* reduced */
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+.fade-in.show .card img { opacity: 1; transform: none; }
+
+/* REVIEWS */
+.review {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding: 26px;
+  border-radius: 14px;
+  max-width: 720px;
+  margin: 12px auto 0;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* FOOTER */
+.footer {
+  padding: 30px;
+  text-align: center;
+  opacity: 0.7;
+  border-top: 1px solid rgba(255,255,255,0.03);
+}
+
+/* HEADER / NAV (glassy) */
+.site-header {
+  background: rgba(6,6,6,0.28);
+  backdrop-filter: blur(6px);
+  padding: 12px 0;
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  border-bottom: 1px solid rgba(255,255,255,0.02);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand {
+  font-weight: 800;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand img { height: 28px; object-fit: contain; }
+
+/* menu button (mobile) */
+.menu-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* nav (hidden on small) */
+.menu {
+  display: none;
+  gap: 18px;
+  flex-direction: column;
+  margin-top: 12px;
+  align-items: center;
+}
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  opacity: 0.9;
+}
+.menu a:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+/* larger screens: horizontal nav */
+@media (min-width: 768px) {
+  .menu-btn { display: none; }
+  .header-inner { gap: 24px; }
+  .menu {
+    display: flex !important;
+    flex-direction: row;
+    margin-top: 0;
+    align-items: center;
+  }
+}
+
+/* small-screen expanded menu */
+.menu.open {
+  display: flex;
+  position: absolute;
+  top: 64px;
+  right: 20px;
+  background: rgba(8,8,8,0.96);
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 12px 40px rgba(2,6,23,0.6);
+  flex-direction: column;
+}
+
+/* FADE-IN scroll animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 420ms ease, transform 420ms ease;
+  will-change: opacity, transform;
+}
+.fade-in.show {
+  opacity: 1;
+  transform: none;
+}
+
+/* ensure wrapper spacing for header */
+.wrapper.header-inner { padding: 0 20px; }
+
+/* Accessibility: reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+/* Small responsive tweaks */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 28px; }
+  .hero p { font-size: 15px; }
+  .brands-grid img { height: 34px; }
+  .card, .review { padding: 18px; }
+}
+
+/* TOP RED BAR (single line at very top) */
+.top-bar {
+  height: 6px;
+  background: #e11d2f; /* Entrepedia red */
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 80;
+}
+
+/* Section variant for white content areas (switches background & text) */
+.section-white {
+  background: #ffffff;
+  color: #0b0b0b; /* dark text on white */
+}
+.section-white h2,
+.section-white p,
+.section-white .card,
+.section-white .review,
+.section-white a { color: #0b0b0b; }
+
+/* Cards & review adjustments for white sections */
+.section-white .card {
+  background: #ffffff;
+  border: 1px solid rgba(11,11,11,0.06);
+  box-shadow: 0 8px 30px rgba(11,11,11,0.04);
+  color: #0b0b0b;
+}
+.section-white .review {
+  background: #fafafa;
+  border: 1px solid rgba(11,11,11,0.06);
+  color: #0b0b0b;
+}
+
+/* avatar in reviews */
+.avatar {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 999px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* subtle reveal for product images inside white sections */
+.section-white .card img {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+.section-white.fade-in.show .card img,
+.section-white .fade-in.show .card img {
+  opacity: 1;
+  transform: none;
+}
+
+/* avatar micro animation */
+.avatar {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 999px;
+  margin-right: 10px;
+  vertical-align: middle;
+  transform: translateY(6px);
+  opacity: 0;
+  transition: opacity 420ms ease, transform 420ms ease;
+}
+.reviews.fade-in.show .avatar,
+.section-white.fade-in.show .avatar,
+.fade-in.show .avatar { opacity: 1; transform: none; }
+
+/* keep header glassy but ensure it appears above top-bar (top-bar is above page edge) */
+.site-header { margin-top: 0; }
+
+/* ensure links and buttons inside white areas are visible */
+.section-white .primary { background: linear-gradient(180deg,#e11d2f,#c41621); color: #fff; }
+.section-white .secondary { background: rgba(11,11,11,0.06); color:#0b0b0b; border-color: rgba(11,11,11,0.06); }
